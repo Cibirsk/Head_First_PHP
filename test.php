@@ -1,9 +1,8 @@
 <?php
 
-    //$yourFirstName= $_POST['myfirstname'];
-    $yourName= $_POST['myname'];
-    //$yourTown= $_POST['mytown'];
-    //echo 'your firstname is: ' . $yourFirstName;
+    $yourFirstName= $_POST['firstname'];
+    $yourName= $_POST['name'];
+    echo 'your firstname is: ' . $yourFirstName . '<br />';
     echo 'your name is: ' . $yourName; 
-    //echo 'you live in: ' . $yourTown;
+
 ?>
