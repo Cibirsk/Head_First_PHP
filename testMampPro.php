@@ -1,8 +1,8 @@
 
 <?php
 
-mail(to:'bob@toto.com',subject:'THE MAMP PRO test',message:'msg de test');
+mail(to:'stlv@gmx.com',subject:'Morning test',message:'message de test');
 
-echo "mail MAMP PRO envoyé";
+echo "email MAMP PRO envoyé";
 
 ?>
