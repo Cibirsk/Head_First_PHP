@@ -2,7 +2,7 @@
 
 $db_host = 'localhost';
   $db_user = 'root';
-  $db_password = 'root';
+  $db_password = 'roott';
   $db_db = 'aliendatabase';
  
   $mysqli = @new mysqli(
@@ -19,7 +19,7 @@ $db_host = 'localhost';
     exit();
   }
 
-  echo 'Success: A proper connection to MySQL was made.';
+  echo 'Success: A proper BIG CONNEXION connection to MySQL was made.';
   echo '<br>';
   echo 'Host information: '.$mysqli->host_info;
   echo '<br>';
