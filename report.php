@@ -9,7 +9,8 @@
   <h2>Aliens Abducted Me - Report an Abduction</h2>
 
 <?php
-  $name = $_POST['firstname'] . ' ' . $_POST['lastname'];
+  $first_name = $_POST['firstname']; 
+  $last_name = $_POST['lastname'];
   $when_it_happened = $_POST['whenithappened'];
   $how_long = $_POST['howlong'];
   $how_many = $_POST['howmany'];
