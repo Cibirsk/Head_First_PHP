@@ -24,7 +24,7 @@
 
     mysqli_close($dbc);
 
-
+    echo 'You will receive some news soon ! ';
 
 
 
