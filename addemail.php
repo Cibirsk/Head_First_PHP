@@ -13,6 +13,17 @@
     $lastName = $_POST['lastname'];
     $email = $_POST['email'];
 
+    $dbc = mysqli_connect('localhost' , 'root' , 'root' , 'elvis_store')
+            or die('erreur de connnexion à la base');
+        
+    $query = " INSERT INTO email_list (first_name, last_name, email) " . 
+                " VALUES ('$firstName' , '$lastName' , '$email' ) " ;
+
+    $result = mysqli_query($dbc,$query)
+            or die('erreur dans la requete');
+
+    mysqli_close($dbc);
+
 
 
 
