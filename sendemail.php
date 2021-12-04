@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+<?php    
+    $subject = $_POST['subject'];
+    $body = $_POST['body'];
+?>
 </body>
 </html>
