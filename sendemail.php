@@ -9,8 +9,9 @@
 <body>
 <?php    
 
+    $from = 'stlv@gmx.com';
     $subject = $_POST['subject'];
-    $body = $_POST['body'];
+    $text= $_POST['elvismail'];
 
     $dbc = mysqli_connect('localhost' , 'root' , 'root' , 'elvis_store')
             or die('erreur de connnexion à la base');
