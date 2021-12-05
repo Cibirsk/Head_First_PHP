@@ -15,7 +15,9 @@
     $dbc = mysqli_connect('localhost' , 'root' , 'root' , 'elvis_store')
             or die('erreur de connnexion à la base');
 
-    $query = "SELECT email FROM email_list" ;
+    $query = "SELECT * FROM email_list" ;
+
+    $result = mysqli_query($dbc, $query) or die('erreur dans la requête');
 
 ?>
 </body>
