@@ -20,6 +20,8 @@
 
     $result = mysqli_query($dbc, $query) or die('erreur dans la requête');
 
+    $row = mysqli_fetch_array($result);
+
 ?>
 </body>
 </html>
