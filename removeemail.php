@@ -20,6 +20,10 @@
                 or die('erreur dans la requête');
 
 
+    mysqli_close($dbc);
+
+    echo 'Your email ' . $email . ' has been removed';
+
 ?>
 </body>
 </html>
