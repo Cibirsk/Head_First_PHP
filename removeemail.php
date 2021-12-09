@@ -14,7 +14,7 @@
     $dbc = mysqli_connect('localhost' , 'root' , 'root' , 'elvis_store')
             or die('erreur de connnexion à la base');
 
-    $query = "DELETE FROM email_list WHERE email = $email";
+    $query = "DELETE FROM email_list WHERE email = '$email' ";
     
     $result = mysqli_query($dbc,$query)
                 or die('erreur dans la requête');
