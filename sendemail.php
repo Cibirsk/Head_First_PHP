@@ -13,29 +13,31 @@
     $subject = $_POST['subject'];
     $text= $_POST['elvismail'];
 
-    $dbc = mysqli_connect('localhost' , 'root' , 'root' , 'elvis_store')
-            or die('erreur de connnexion à la base');
+    if(!empty($subject) && !empty($text)){
 
-    $query = "SELECT * FROM email_list" ;
+        $dbc = mysqli_connect('localhost' , 'root' , 'root' , 'elvis_store')
+                or die('erreur de connnexion à la base');
 
-    $result = mysqli_query($dbc, $query) 
-                 or die('erreur dans la requête');
+        $query = "SELECT * FROM email_list" ;
 
-    while($row = mysqli_fetch_array($result) and !empty($subject) and !empty($text)){
-        $first_name = $row['first_name'];
-        $last_name = $row['last_name'];
+        $result = mysqli_query($dbc, $query) 
+                    or die('erreur dans la requête');
 
-        $msg = "Dear $first_name $last_name, \n $text";
-        $to = $row['email'];
+        while($row = mysqli_fetch_array($result)){
+            $first_name = $row['first_name'];
+            $last_name = $row['last_name'];
 
-        mail($to,$subject,$msg, 'from: ' . $from);
+            $msg = "Dear $first_name $last_name, \n $text";
+            $to = $row['email'];
 
-        echo 'Mail sent to: ' . $to . '<br>';
-    }    
+            mail($to,$subject,$msg, 'from: ' . $from);
 
-    if(empty($subject) or empty($text)){
-        echo 'message vide';
+            echo 'Mail sent to: ' . $to . '<br>';
+        }    
+    }else{
+        echo 'le sujet ou le message est vide';
     }
+
 
     mysqli_close($dbc);
 
