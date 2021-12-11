@@ -21,7 +21,7 @@
     $result = mysqli_query($dbc, $query) 
                  or die('erreur dans la requête');
 
-    while($row = mysqli_fetch_array($result)){
+    while($row = mysqli_fetch_array($result) and !empty($subject) and !empty($text)){
         $first_name = $row['first_name'];
         $last_name = $row['last_name'];
 
@@ -31,8 +31,12 @@
         mail($to,$subject,$msg, 'from: ' . $from);
 
         echo 'Mail sent to: ' . $to . '<br>';
+    }    
+
+    if(empty($subject) or empty($text)){
+        echo 'message vide';
     }
-    
+
     mysqli_close($dbc);
 
 ?>
