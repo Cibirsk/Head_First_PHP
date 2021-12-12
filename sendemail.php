@@ -12,6 +12,22 @@
     $from = 'stlv@gmx.com';
     $subject = $_POST['subject'];
     $text= $_POST['elvismail'];
+    $ouput_form = false;
+
+    if(empty($subject) && empty($text)){
+        echo 'Subject and text are empty';
+        $ouput_form = true;
+    }
+
+    if(empty($subject) && !empty($text)){
+        echo 'Subject are empty';
+        $ouput_form = true;
+    }
+
+    if(!empty($subject) && empty($text)){
+        echo 'Text are empty';
+        $ouput_form = true;
+    }
 
     if(!empty($subject) && !empty($text)){
 
@@ -34,10 +50,7 @@
 
             echo 'Mail sent to: ' . $to . '<br>';
         }    
-    }else{
-        echo 'le sujet ou le message est vide';
     }
-
 
     mysqli_close($dbc);
 
