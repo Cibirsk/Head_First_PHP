@@ -52,6 +52,22 @@
         }    
     }
 
+    if($ouput_form){
+        ?>
+
+        <form method="post" action="sendemail.php" >
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject" size="30">  <br>
+
+        <label for="elvismail">Body of email:</label> <br>
+        <textarea type="text" id="elvismail" name="elvismail" rows="8" cols="40"></textarea> <br>
+
+        <input type="submit" value="Submit" name="submit">
+        </form>
+
+        <?php
+    }
+
     mysqli_close($dbc);
 
 ?>
