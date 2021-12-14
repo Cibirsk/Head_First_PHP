@@ -61,10 +61,10 @@
 
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
         <label for="subject">Subject:</label><br>
-        <input type="text" id="subject" name="subject" size="30">  <br>
+        <input type="text" id="subject" name="subject" size="30" value="<?php echo $subject ?>">  <br>
 
         <label for="elvismail">Body of email:</label> <br>
-        <textarea type="text" id="elvismail" name="elvismail" rows="8" cols="40"></textarea> <br>
+        <textarea type="text" id="elvismail" name="elvismail" rows="8" cols="40"><?php echo $text?></textarea> <br>
 
         <input type="submit" value="Submit" name="submit">
         </form>
