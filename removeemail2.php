@@ -7,8 +7,7 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-  <img src="blankface.jpg" width="161" height="350" alt="" style="float:right" />
-  <img name="elvislogo" src="elvislogo.gif" width="229" height="32" border="0" alt="Make Me Elvis" />
+
   <p>Please select the email addresses to delete from the email list and click Remove.</p>
   <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
