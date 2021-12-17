@@ -30,7 +30,7 @@
   $query = "SELECT * FROM email_list";
   $result = mysqli_query($dbc, $query);
   while ($row = mysqli_fetch_array($result)) {
-    echo '<input type="checkbox" value="' . $row['id'] . '" name="todelete[]" />';
+    echo '<input type="checkbox" value=" ' . $row['id'] . ' "  name="todelete[]" />';
     echo $row['first_name'];
     echo ' ' . $row['last_name'];
     echo ' ' . $row['email'];
