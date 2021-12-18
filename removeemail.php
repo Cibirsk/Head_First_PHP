@@ -14,6 +14,12 @@
 <?php
     $dbc = mysqli_connect('localhost' , 'root' , 'root' , 'elvis_store')
             or die('erreur de connnexion à la base');
+  // 1: creation de la connexion avec mysqli_connect et les parametres
+  // 2: creation de la requete avec SELECT * FROM email_list
+  // 3: la connexion et la requete sont stocké dans $result
+  // 4:   affichage de la page (id,prenom, nom, mail)
+  // 4.1:    mysqli_fetch_array balaye la base avec les données de connexion de $result et stock dans $row
+  // 4.2:    la checkbox a pour value 'id' du $row en cours et pour name un tableau crée 'todelete[]' 
 
   // Delete the customer rows (only if the form has been submitted)
   if (isset($_POST['submit'])) {
@@ -30,7 +36,7 @@
   $query = "SELECT * FROM email_list";
   $result = mysqli_query($dbc, $query);
   while ($row = mysqli_fetch_array($result)) {
-    echo '<input type="checkbox" value=" ' . $row['id'] . ' "  name="todelete[]" />';
+    echo '<input type="checkbox" value="' . $row['id'] . '"  name="todelete[]" />';
     echo $row['first_name'];
     echo ' ' . $row['last_name'];
     echo ' ' . $row['email'];
